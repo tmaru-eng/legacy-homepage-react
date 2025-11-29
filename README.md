@@ -1,6 +1,6 @@
 # 🕹️ レガシー風ホームページ再現プロジェクト
 
-1990〜2000年代の個人ホームページを、モダンな技術（React + Cloudflare）で再現した**学習用プロジェクト**です。
+1990〜2000年代の個人ホームページを、モダンな技術（React + TypeScript + Cloudflare）で再現した**学習用プロジェクト**です。
 
 ## 🌐 デモサイト
 
@@ -13,6 +13,7 @@ https://legacy-homepage-react.pages.dev
 ### 目的
 
 - **React** の基礎を学ぶ
+- **TypeScript** による型安全な開発を学ぶ
 - **フロントエンド開発**（コンポーネント設計、ルーティング、状態管理）を学ぶ
 - **バックエンド構築**（Cloudflare Workers + D1）を学ぶ
 - **無料枠**で本格的なWebアプリをデプロイする方法を学ぶ
@@ -23,6 +24,19 @@ https://legacy-homepage-react.pages.dev
 GeoCities、COOL ONLINE、infoseekなどの無料ホームページサービスで、多くの人が自分だけのサイトを持っていました。
 
 このプロジェクトでは、当時の懐かしい雰囲気を再現しながら、現代の技術を学びます。
+
+---
+
+## 🎓 学習ガイド
+
+**👉 [LEARNING_GUIDE.md](./LEARNING_GUIDE.md) をご覧ください！**
+
+従来のWeb開発（HTML/CSS/JavaScript、LAMP構成など）の経験者向けに、Reactの学習ガイドを用意しました。
+
+- 従来のWeb開発とReactの違い
+- 各ファイルで何が学べるか
+- 重要な概念の解説
+- 実践課題
 
 ---
 
@@ -43,6 +57,7 @@ GeoCities、COOL ONLINE、infoseekなどの無料ホームページサービス�
 ```
 フロントエンド
 ├── React 19          # UIライブラリ
+├── TypeScript        # 型安全な開発
 ├── Vite              # ビルドツール
 ├── React Router      # ルーティング
 └── CSS               # スタイリング（レガシー風）
@@ -70,6 +85,7 @@ legacy-homepage-react/
 │   │   └── Common/          # Banner, UnderConstruction
 │   ├── pages/               # ページコンポーネント
 │   ├── hooks/               # カスタムフック（API通信）
+│   ├── types/               # TypeScript型定義
 │   └── styles/              # グローバルCSS
 ├── workers/                 # Cloudflare Workers API
 │   ├── src/
@@ -78,6 +94,7 @@ legacy-homepage-react/
 │   │   └── utils/           # sanitize.js, hash.js
 │   ├── schema.sql           # D1テーブル定義
 │   └── wrangler.toml        # Workers設定
+├── LEARNING_GUIDE.md        # React学習ガイド
 └── package.json
 ```
 
@@ -158,15 +175,16 @@ wrangler deploy
 
 ---
 
-## 📚 学習ガイド
+## 📚 学習リソース
 
 ### このプロジェクトで学べること
 
-#### React基礎
+#### React + TypeScript基礎
 - コンポーネントの分割方法
 - Props と State の使い分け
 - useEffect でのライフサイクル管理
 - カスタムフックの作成
+- TypeScriptによる型定義
 
 #### フロントエンド設計
 - ディレクトリ構成のベストプラクティス
@@ -183,15 +201,17 @@ wrangler deploy
 | 学習したいこと | 見るべきファイル |
 |--------------|-----------------|
 | Reactコンポーネント | `src/components/` |
-| ルーティング | `src/App.jsx` |
-| カスタムフック | `src/hooks/useBBS.js`, `useCounter.js` |
+| TypeScript型定義 | `src/types/index.ts` |
+| ルーティング | `src/App.tsx` |
+| カスタムフック | `src/hooks/useBBS.ts`, `useCounter.ts` |
 | API実装 | `workers/src/routes/` |
 | CSS Animation | `src/components/Effects/Effects.css` |
 
 ### おすすめ学習リソース
 
-- [React公式ドキュメント](https://react.dev/)
-- [Vite公式ドキュメント](https://vitejs.dev/)
+- [React公式ドキュメント（日本語）](https://ja.react.dev/)
+- [TypeScript公式ハンドブック](https://www.typescriptlang.org/docs/handbook/)
+- [Vite公式ドキュメント](https://ja.vitejs.dev/)
 - [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
 - [Cloudflare D1 Docs](https://developers.cloudflare.com/d1/)
 
