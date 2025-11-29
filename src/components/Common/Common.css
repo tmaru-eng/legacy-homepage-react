@@ -1,0 +1,157 @@
+/* ============================================
+   共通コンポーネント CSS
+   ============================================ */
+
+/* 工事中ページ */
+.under-construction {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(0, 0, 51, 0.5);
+  border: 2px solid #6666cc;
+  margin: 20px 0;
+}
+
+.construction-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.construction-animation {
+  display: inline-block;
+  animation: construction-shake 0.5s ease-in-out infinite;
+}
+
+@keyframes construction-shake {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.construction-title {
+  font-size: 24px;
+  color: #ffff00;
+  text-shadow: 2px 2px 0px #ff0000;
+  margin-bottom: 20px;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.construction-message {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.construction-details {
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.construction-bar {
+  width: 80%;
+  max-width: 400px;
+  height: 20px;
+  background: #000000;
+  border: 2px solid #666666;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.construction-bar-stripe {
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffcc00,
+    #ffcc00 10px,
+    #000000 10px,
+    #000000 20px
+  );
+  animation: stripe-move 1s linear infinite;
+}
+
+@keyframes stripe-move {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.construction-notice {
+  font-size: 12px;
+  color: #ff6600;
+  margin-top: 20px;
+}
+
+/* バナー */
+.banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner-link:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.banner-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+/* セパレータ */
+.legacy-separator {
+  text-align: center;
+  margin: 20px 0;
+  color: #666699;
+  font-size: 12px;
+}
+
+.legacy-separator::before,
+.legacy-separator::after {
+  content: "━━━━━━━━━━";
+  margin: 0 10px;
+}
+
+/* スター装飾 */
+.star-decoration {
+  color: #ffff00;
+  text-shadow: 0 0 5px #ff6600;
+}
+
+/* NEW! バッジ */
+.new-badge {
+  display: inline-block;
+  background: #ff0000;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 4px;
+  margin-left: 5px;
+  animation: blink-animation 0.8s steps(2, start) infinite;
+}
+
+/* UP! バッジ */
+.up-badge {
+  display: inline-block;
+  color: #ff0000;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.up-badge::before {
+  content: "↑UP!";
+}
+

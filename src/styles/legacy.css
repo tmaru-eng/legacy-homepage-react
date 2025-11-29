@@ -1,0 +1,365 @@
+/* ============================================
+   レガシー風ホームページ メインCSS
+   1990〜2000年代のWebサイトを再現
+   ============================================ */
+
+/* Google Fonts - レトロ感のあるフォント */
+@import url('https://fonts.googleapis.com/css2?family=MS+PGothic&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* CSS変数 */
+:root {
+  /* レガシーカラーパレット */
+  --bg-color: #000033;
+  --text-color: #ffffff;
+  --link-color: #00ffff;
+  --link-visited: #ff00ff;
+  --link-hover: #ffff00;
+  --accent-color: #ff6600;
+  --border-color: #666699;
+  --header-bg: #000066;
+  --sidebar-bg: #000044;
+  --content-bg: #000022;
+  --table-border: #9999cc;
+  
+  /* フォント */
+  --font-main: 'MS PGothic', 'Noto Sans JP', 'ＭＳ Ｐゴシック', sans-serif;
+  --font-title: 'MS PGothic', 'ＭＳ ゴシック', monospace;
+}
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベーススタイル */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  /* 星空背景（CSS生成） */
+  background-image: 
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px, 50px 50px;
+  background-position: 0 0, 25px 25px;
+}
+
+/* リンクスタイル（レガシー風） */
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+a:active {
+  color: #ff0000;
+}
+
+/* メインレイアウト */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+/* ヘッダー */
+.header {
+  background: linear-gradient(to bottom, #000099 0%, #000066 50%, #000033 100%);
+  border-bottom: 3px solid var(--border-color);
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.header-title {
+  font-family: var(--font-title);
+  font-size: 28px;
+  color: #ffff00;
+  text-shadow: 
+    2px 2px 0px #ff0000,
+    4px 4px 0px #000000;
+  letter-spacing: 4px;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 5px;
+}
+
+/* サイドバー */
+.sidebar {
+  width: 200px;
+  background: var(--sidebar-bg);
+  border-right: 2px solid var(--border-color);
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-title {
+  background: linear-gradient(to right, #6666cc, #333366);
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #9999cc;
+  margin-bottom: 10px;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  padding: 5px 0;
+  border-bottom: 1px dotted #333366;
+}
+
+.sidebar-menu li::before {
+  content: "▶ ";
+  color: #ff6600;
+  font-size: 10px;
+}
+
+.sidebar-menu a {
+  font-size: 13px;
+}
+
+/* メインコンテンツ */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: var(--content-bg);
+}
+
+/* フッター */
+.footer {
+  background: linear-gradient(to top, #000033 0%, #000066 100%);
+  border-top: 3px solid var(--border-color);
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 11px;
+  color: #999999;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.footer-copyright {
+  border-top: 1px dotted #333366;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* バナーエリア */
+.banner-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.banner-88x31 {
+  width: 88px;
+  height: 31px;
+  border: 1px solid #666666;
+}
+
+/* セクションボックス */
+.section-box {
+  background: rgba(0, 0, 51, 0.8);
+  border: 2px solid var(--table-border);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.section-title {
+  background: linear-gradient(to right, #6666cc 0%, #333399 50%, #000066 100%);
+  color: #ffff00;
+  padding: 8px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #9999ff;
+  margin: -15px -15px 15px -15px;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.section-title::before {
+  content: "★ ";
+}
+
+/* テーブルスタイル（レガシー風） */
+.legacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--table-border);
+}
+
+.legacy-table th {
+  background: #333366;
+  color: #ffffff;
+  padding: 8px;
+  border: 1px solid var(--table-border);
+  text-align: left;
+}
+
+.legacy-table td {
+  background: #000033;
+  padding: 8px;
+  border: 1px solid var(--table-border);
+}
+
+.legacy-table tr:hover td {
+  background: #000044;
+}
+
+/* 水平線（レガシー風） */
+hr.legacy-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #6666cc, #ff6600, #6666cc, transparent);
+  margin: 20px 0;
+}
+
+/* ボタン（レガシー風3D） */
+.legacy-button {
+  background: linear-gradient(to bottom, #cccccc 0%, #999999 50%, #666666 100%);
+  border: 2px outset #cccccc;
+  padding: 5px 15px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.legacy-button:active {
+  border-style: inset;
+  background: linear-gradient(to bottom, #666666 0%, #999999 50%, #cccccc 100%);
+}
+
+/* 入力フィールド */
+.legacy-input,
+.legacy-textarea {
+  background: #ffffff;
+  border: 2px inset #cccccc;
+  padding: 5px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: #000000;
+}
+
+.legacy-input:focus,
+.legacy-textarea:focus {
+  outline: 2px solid #ff6600;
+}
+
+/* marquee風コンテナ */
+.marquee-container {
+  background: #000066;
+  border: 1px solid #6666cc;
+  padding: 5px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* カウンターエリア */
+.counter-area {
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: #000044;
+  border: 2px ridge #6666cc;
+}
+
+.counter-label {
+  font-size: 12px;
+  color: #ffff00;
+  margin-bottom: 5px;
+}
+
+.counter-display {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  color: #00ff00;
+  background: #000000;
+  padding: 5px 15px;
+  border: 2px inset #333333;
+  display: inline-block;
+  letter-spacing: 3px;
+}
+
+/* 更新履歴 */
+.update-history {
+  font-size: 12px;
+}
+
+.update-history li {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.update-history li::before {
+  content: "●";
+  color: #ff6600;
+  margin-right: 5px;
+}
+
+.update-date {
+  color: #ffff00;
+  margin-right: 10px;
+}
+
+/* 工事中エリア */
+.under-construction {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.under-construction img {
+  margin: 20px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--border-color);
+  }
+}
+

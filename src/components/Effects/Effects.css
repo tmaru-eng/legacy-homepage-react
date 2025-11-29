@@ -1,0 +1,124 @@
+/* ============================================
+   レガシーエフェクト CSS
+   ============================================ */
+
+/* Marquee スクロール */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(to bottom, #000066 0%, #000044 100%);
+  border: 1px solid #6666cc;
+  padding: 8px 10px;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 点滅テキスト */
+.blink-text {
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 虹色テキスト（静的） */
+.rainbow-text {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 虹色テキスト（アニメーション） */
+.rainbow-text-animated {
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8f00ff,
+    #ff0000
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-animation 3s linear infinite;
+}
+
+@keyframes rainbow-animation {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* キラキラ星エフェクト */
+.sparkle {
+  display: inline-block;
+  animation: sparkle-animation 1s ease-in-out infinite;
+}
+
+@keyframes sparkle-animation {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* 回転エフェクト */
+.rotate-slow {
+  display: inline-block;
+  animation: rotate-animation 10s linear infinite;
+}
+
+@keyframes rotate-animation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* バウンスエフェクト */
+.bounce {
+  display: inline-block;
+  animation: bounce-animation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes bounce-animation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+/* フェードインアウト */
+.fade-pulse {
+  animation: fade-pulse-animation 2s ease-in-out infinite;
+}
+
+@keyframes fade-pulse-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* NEW! アイコン点滅 */
+.new-icon {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 10px;
+  animation: blink-animation 0.8s steps(2, start) infinite;
+  margin-left: 5px;
+}
+
+/* 工事中アニメーション */
+.construction-animation {
+  animation: construction-shake 0.5s ease-in-out infinite;
+}
+
+@keyframes construction-shake {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
